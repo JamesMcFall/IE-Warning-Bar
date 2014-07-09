@@ -11,18 +11,14 @@ It uses a cookie to store whether or not the user has dismissed the upgrade noti
 
 ### Required Libraries
 
-**[jQuery](http://jquery.com/) (cdn included in example)**
-
-**[Bowser](https://github.com/ded/bowser) (included)**
-A Browser detector. Because sometimes, there is no other way, and not even good modern browsers always provide good feature detection mechanisms.
-
-**[jQuery Cookie](https://github.com/carhartl/jquery-cookie) (included)**
-A simple, lightweight jQuery plugin for reading, writing and deleting cookies.
+* **[jQuery](http://jquery.com/) (cdn included in example)**
+* **[Bowser](https://github.com/ded/bowser) (included)** - A Browser detector. Because sometimes, there is no other way, and not even good modern browsers always provide good feature detection mechanisms.
+* **[jQuery Cookie](https://github.com/carhartl/jquery-cookie) (included)** - A simple, lightweight jQuery plugin for reading, writing and deleting cookies.
 
 ### How To Use
 As long as you have the above JavaScript libraries included (which come as part of this repo) you will just need to copy the banner markup from the example index.html file: 
 
-```
+```html
 <!-- This is the notification bar you want in your markup at the top of the screen -->
 <div id="ieMessage" style="display:none;">
     <div class="inner">
@@ -41,9 +37,7 @@ As long as you have the above JavaScript libraries included (which come as part 
 
 Then include the JavaScript from the example: 
 
-```
-<!-- This is the JS that handles the IE warning message  -->
-<script>
+```javascript
 $(document).ready(function() {
 
     // IE warning message - Show if using below IE9
@@ -62,7 +56,6 @@ $(document).ready(function() {
         ieMessage.slideUp(500);
     });
 });
-</script>
 ```
 
 Then it'll work!
