@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IE Warning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/ie-message.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <!-- This is the notification bar you want in your markup at the top of the screen -->
+        <div id="ieMessage" style="display:none;">
+            <div class="inner">
+                <span class="outOfDate">Did you know your browser is out of date?</span>
+                <p>To get the best possible experience using our website we recommmend that you upgrade to a newer version or other web browser. IE8 is no longer supported. A list of the most popular web browsers can be found below. Click on the links to get to the download page.</p>
+                <ul>
+                    <li><a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie" target="_blank">Internet Explorer</a></li>
+                    <li><a href="http://www.mozilla.org/en-US/" target="_blank">Firefox</a></li>
+                    <li><a href="http://support.apple.com/downloads/#safari" target="_blank">Safari</a></li>
+                    <li><a href="https://www.google.com/chrome" target="_blank">Chrome</a></li>
+                </ul>
+                <a class="close"></a>
+            </div>
+        </div>
+        
+        
+        <h1>IE warning - Doesn't appear unless you are using below IE 9</h1>
+        <p>
+            If you are using IE (in this case less than 9) you get an error bar
+            that appears and tells you your browser is up to date, and provides
+            links to upgrade links for IE (boo), Firefox, Safari and Chrome.
+        </p>
+        <p>
+            If you want to test this in your normal browser, comment out the if 
+            statement that uses bowser to check the browser version.
+        </p>
+
+        
+        <!-- Required JS libraries -->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="/js/jquery.bowser.js"></script>
+        <script src="/js/jquery.cookie.js"></script>
+        
+        
+        <!-- This is the JS that handles the IE warning message  -->
+        <script>
+        $(document).ready(function() {
+            
+            // IE warning message - Show if using below IE9
+            var ieMessage = $("#ieMessage");
+            if (bowser.msie && bowser.version < 9) { // <- Change to whatever IE version you want
+                if (typeof $.cookie("ieMessage") == "undefined") {
+                    ieMessage.slideDown(500);
+                }
+            }
+            
+            // Close button handler. Set a cookie so we don't show the banner on 
+            // every page load.
+            $("a.close", ieMessage).click(function(e) {
+                e.preventDefault();
+                $.cookie('ieMessage', true, { expires: 7, path: '/' });
+                ieMessage.slideUp(500);
+            });
+        });
+        </script>
+    </body>
+</html>

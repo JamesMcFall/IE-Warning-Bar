@@ -1,0 +1,65 @@
+/** Old browser notification **/
+#ieMessage {
+    width: 100%;
+    background: #444444;
+    display: block;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: none; }
+
+.inner {
+    width: 750px;
+    margin: 0 auto;
+    display: block;
+    position: relative; }
+
+.outOfDate {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    width: 100%;
+    display: block; }
+
+#ieMessage p {
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 0; }
+
+#ieMessage ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 13px;
+    display: inline-block; }
+
+#ieMessage li {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px; }
+
+#ieMessage li.lastChild {
+    margin-right: none; }
+
+#ieMessage li a {
+    color: #fffff;
+    text-decoration: underline;
+    cursor: pointer; }
+
+#ieMessage a:hover {
+    text-decoration: underline; }
+
+#ieMessage a.close {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 15px;
+    height: 15px;
+    background: url("/images/close.png") no-repeat left top;
+    display: block;
+    line-height: 16px;
+    opacity: 1;
+    text-shadow: none;
+    font-size: 16px;
+    float: none; }
